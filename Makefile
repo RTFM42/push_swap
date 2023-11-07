@@ -6,11 +6,11 @@
 #    By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 10:00:38 by yushsato          #+#    #+#              #
-#    Updated: 2023/11/02 18:48:42 by yushsato         ###   ########.fr        #
+#    Updated: 2023/11/07 17:21:50 by yushsato         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= fractol
+NAME	= push_swap
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 SRCS	= main.c
