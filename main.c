@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:58:30 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/07 17:20:00 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/07 20:01:55 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,40 @@ static char	**parser(int argc, char **argv)
 	return (values);
 }
 
+static int	*order(char **c)
+{
+	int		*ret;
+	int		i;
+	int		j;
+	int		n;
+
+	i = 0;
+	while (c[i++] != NULL)
+		;
+	ret = ft_calloc(sizeof(char *), i);
+	i = 0;
+	while (c[i++] != NULL)
+	{
+		j = 0;
+		n = 1;
+		while (c[j++] != NULL)
+			if (ft_atoi(c[j - 1]) > ft_atoi(c[i - 1]))
+				n++;
+		ret[i - 1] = n;
+	}
+	return (ret);
+}
+
 int	main(int argc, char **argv)
 {
 	char	**parsed;
+	int		*ordered;
 
 	parsed = parser(argc, argv);
-	while (*parsed != NULL)
-		ft_printf("%s ", *parsed++);
+	ordered = order(parsed);
+	while (*ordered != 0)
+		ft_printf("%d,", *ordered++);
+	printf("%d", *ordered);
 	exit (0);
 	return (0);
 }
