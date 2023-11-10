@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:58:30 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/10 19:37:13 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/10 19:59:15 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,17 @@ static char	**parser(int argc, char **argv)
 	return (values);
 }
 
+static int	is_include(int *ary, int *i)
+{
+	while (*ary != 0)
+	{
+		if (*ary == *i)
+			return (1);
+		ary++;
+	}
+	return (0);
+}
+
 static int	*order(char **c)
 {
 	int		*ret;
@@ -48,6 +59,8 @@ static int	*order(char **c)
 		while (c[j++] != NULL)
 			if (ft_atoi(c[j - 1]) < ft_atoi(c[i - 1]))
 				n++;
+		while (is_include(ret, &n))
+			n++;
 		ret[i - 1] = n;
 	}
 	return (ret);
