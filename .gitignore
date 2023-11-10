@@ -62,4 +62,4 @@ test.c
 # tar file
 *.tgz
 
-/fractol
+/push_swap
