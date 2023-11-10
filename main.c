@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:58:30 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/07 20:01:55 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/10 19:37:13 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	*order(char **c)
 		j = 0;
 		n = 1;
 		while (c[j++] != NULL)
-			if (ft_atoi(c[j - 1]) > ft_atoi(c[i - 1]))
+			if (ft_atoi(c[j - 1]) < ft_atoi(c[i - 1]))
 				n++;
 		ret[i - 1] = n;
 	}
