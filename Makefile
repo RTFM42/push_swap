@@ -6,13 +6,13 @@
 #    By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 10:00:38 by yushsato          #+#    #+#              #
-#    Updated: 2023/11/07 17:21:50 by yushsato         ###   ########.fr        #
+#    Updated: 2023/11/12 19:48:00 by yushsato         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
-CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
+CC		= gcc-12
+CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=leak -fno-omit-frame-pointer
 SRCS	= main.c
 OBJS	= $(SRCS:.c=.o)
 INCLUDE	= -I. -I./lib/libft
