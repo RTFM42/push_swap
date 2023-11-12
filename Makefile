@@ -6,7 +6,7 @@
 #    By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 10:00:38 by yushsato          #+#    #+#              #
-#    Updated: 2023/11/12 20:53:26 by yushsato         ###   ########.fr        #
+#    Updated: 2023/11/12 21:06:06 by yushsato         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,6 @@ OBJS	= $(SRCS:.c=.o)
 INCLUDE	= -I. -I./lib/libft
 LIBFT	= libft.a
 PRINTF	= ftprintf.a
-
-all: $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
@@ -35,6 +33,8 @@ $(PRINTF):
 	cd lib && cd ft_printf \
 		&& make all && cp $@ ../../ && make fclean;
 
+all: $(NAME)
+
 clean:
 	rm -f $(OBJS) $(LIBFT) $(PRINTF)
 
@@ -45,9 +45,15 @@ re: fclean all
 
 build: all clean
 
+__debug_configure__:
+	$(eval CC := clang)
+	$(eval CFLAGS := -Wall -Wextra -Werror -g -fsanitize=leak)
+
+debug: __debug_configure__ $(NAME)
+
 norminette: $(SRCS)
 	norminette $< ./lib/ft_printf ./lib/libft
 
 norm: norminette
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re build __debug_configure__ debug norminette norm
