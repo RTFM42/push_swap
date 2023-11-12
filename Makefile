@@ -6,7 +6,7 @@
 #    By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 10:00:38 by yushsato          #+#    #+#              #
-#    Updated: 2023/11/12 22:09:48 by yushsato         ###   ########.fr        #
+#    Updated: 2023/11/12 22:17:19 by yushsato         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,7 @@ __debug_configure__:
 	$(eval CC := gcc)
 	$(eval CFLAGS := -g -fsanitize=address -Wall -Wextra -Werror)
 
-debug: __debug_configure__ $(OBJS) $(LIBFT) $(PRINTF)
-	$(CC) $(CFLAGS) $^ $(INCLUDE) -o $@
+debug: __debug_configure__ all
 
 norminette: $(SRCS)
 	norminette $< ./lib/ft_printf ./lib/libft
