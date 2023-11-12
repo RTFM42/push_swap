@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:58:30 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/10 19:59:15 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/12 17:58:35 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,6 @@ int	main(int argc, char **argv)
 
 	parsed = parser(argc, argv);
 	ordered = order(parsed);
-	while (*ordered != 0)
-		ft_printf("%d,", *ordered++);
-	printf("%d", *ordered);
-	exit (0);
+	while (*parsed)
 	return (0);
 }
