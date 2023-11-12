@@ -6,13 +6,13 @@
 #    By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 10:00:38 by yushsato          #+#    #+#              #
-#    Updated: 2023/11/12 20:22:19 by yushsato         ###   ########.fr        #
+#    Updated: 2023/11/12 20:53:26 by yushsato         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=leak
+CFLAGS	= -Wall -Wextra -Werror
 SRCS	= main.c
 OBJS	= $(SRCS:.c=.o)
 INCLUDE	= -I. -I./lib/libft
