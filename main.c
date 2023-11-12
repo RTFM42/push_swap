@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:58:30 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/12 20:16:14 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/12 21:27:18 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,10 @@ int	main(int argc, char **argv)
 	while (ordered[i])
 		printf("%d, ", ordered[i++]);
 	i = 0;
-//	while (parsed[i] != NULL)
-//		free(parsed[i++]);
-//	free(parsed);
+	while (parsed[i] != NULL)
+		free(parsed[i++]);
+	free(parsed[i]);
+	free(parsed);
+	free(ordered);
 	return (0);
 }

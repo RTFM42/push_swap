@@ -6,7 +6,7 @@
 #    By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 10:00:38 by yushsato          #+#    #+#              #
-#    Updated: 2023/11/12 21:08:51 by yushsato         ###   ########.fr        #
+#    Updated: 2023/11/12 22:09:48 by yushsato         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,10 +46,11 @@ re: fclean all
 build: all clean
 
 __debug_configure__:
-	$(eval CC := clang)
-	$(eval CFLAGS := -Wall -Wextra -Werror -g -fsanitize=leak)
+	$(eval CC := gcc)
+	$(eval CFLAGS := -g -fsanitize=address -Wall -Wextra -Werror)
 
-debug: __debug_configure__ $(NAME)
+debug: __debug_configure__ $(OBJS) $(LIBFT) $(PRINTF)
+	$(CC) $(CFLAGS) $^ $(INCLUDE) -o $@
 
 norminette: $(SRCS)
 	norminette $< ./lib/ft_printf ./lib/libft
