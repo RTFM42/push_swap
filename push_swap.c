@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yushsato <yushsato@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 19:03:13 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/13 20:08:35 by yushsato         ###   ########.fr       */
+/*   Created: 2023/11/13 20:02:55 by yushsato          #+#    #+#             */
+/*   Updated: 2023/11/13 21:14:00 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdlib.h>
-# include "lib/libft/libft.h"
-# include "lib/ft_printf/ft_printf.h"
+void	push_swap(int *stack_a)
+{
+	int	*stack_b;
+	int	len;
 
-void	push_swap(int *stack);
+	len = 0;
+	while (stack_a[len] != 0)
+		len++;
+	stack_b = ft_calloc(len + 1, sizeof(int));
 
-#endif
+}

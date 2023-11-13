@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:58:30 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/13 20:00:24 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/13 20:02:37 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ int	main(int argc, char **argv)
 	}
 	parsed = parser(argc, argv);
 	ordered = order(parsed);
+	push_swap(ordered);
 	i = 0;
 	while (parsed[i] != NULL)
 		free(parsed[i++]);
