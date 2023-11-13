@@ -6,11 +6,16 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:58:30 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/12 22:45:52 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:15:00 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+__attribute__((destructor)) static void	destructor()
+{
+    system("leaks -q push_swap");
+}
 
 static char	**parser(int argc, char **argv)
 {
