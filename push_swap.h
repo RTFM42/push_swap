@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:03:13 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/18 19:24:54 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:03:45 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ typedef struct s_node
 
 char	**ps_split(const char *s, char c);
 long	ps_atoi(const char *str);
-void	push_swap(int *stack);
+void	push_swap(char **val);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 10:00:38 by yushsato          #+#    #+#              #
-#    Updated: 2023/11/18 20:08:18 by yushsato         ###   ########.fr        #
+#    Updated: 2023/11/18 22:15:29 by yushsato         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME	= push_swap
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 SRCS	= main.c \
-		  ps_atoi.c
+		  ps_atoi.c \
+		  push_swap.c
 OBJS	= $(SRCS:.c=.o)
 INCLUDE	= -I. -I./lib/libft
 LIBFT	= libft.a

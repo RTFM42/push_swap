@@ -6,29 +6,29 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:58:30 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/18 21:00:31 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:03:26 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// __attribute__((destructor))	static void	destructor(void)
-// {
-// 	system("leaks -q push_swap");
-// }
+__attribute__((destructor))	static void	destructor(void)
+{
+	system("leaks -q push_swap");
+}
 
-int	is_parsable(int len, char **val)
+static int	is_valid(char **val)
 {
 	int	i;
 	int	n;
 	int	z;
 
 	i = -1;
-	while (++i < len)
+	while (val[++i] != NULL)
 	{
 		n = 0;
 		z = -1;
-		while (++z < len)
+		while (val[++z] != NULL)
 			if (i != z && !ft_memcmp(val[i], val[z], ft_strlen(val[i]) + 1))
 				return (0);
 		if ('0' == val[i][0] && '\0' == val[i][1])
@@ -48,21 +48,29 @@ int	is_parsable(int len, char **val)
 
 int	main(int argc, char **argv)
 {
-	char			**val;
-	unsigned int	size;
+	char	**val;
+	int		flag;
+	int		i;
 
 	if (argc <= 1)
 		return (0);
-	val = &argv[1];
-	size = argc - 1;
 	if (argc == 2)
-	{
-		size = 0;
 		val = ft_split(argv[1], ' ');
-		while (val[size] != NULL)
-			size++;
+	else
+	{
+		val = ft_calloc(argc, sizeof(char **));
+		while (--argc >= 1)
+			val[argc - 1] = ft_strdup(argv[argc]);
 	}
-	if (is_parsable(size, val))
-		ft_printf("OK\n");
-	return (0);
+	flag = is_valid(val);
+	if (flag)
+		push_swap(val);
+	else
+		ft_printf("Error\n");
+	i = 0;
+	while (val[i] != NULL)
+		free(val[i++]);
+	free(val[i]);
+	free(val);
+	return (!flag);
 }
