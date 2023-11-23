@@ -6,16 +6,16 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:58:30 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/20 16:03:26 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/23 16:39:53 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-__attribute__((destructor))	static void	destructor(void)
-{
-	system("leaks -q push_swap");
-}
+// __attribute__((destructor))	static void	destructor(void)
+// {
+// 	system("leaks -q push_swap");
+// }
 
 static int	is_valid(char **val)
 {
@@ -46,31 +46,46 @@ static int	is_valid(char **val)
 	return (1);
 }
 
+static void	strs_free(char **ary)
+{
+	int	i;
+
+	i = -1;
+	while (ary[++i] != NULL)
+		free(ary[i]);
+	free(ary[i]);
+	free(ary);
+}
+
+static char	**strs_dup(char **src, unsigned int len)
+{
+	char			**val;
+	unsigned int	i;
+
+	val = ft_calloc(len + 1, sizeof(char **));
+	i = -1;
+	while (++i < len)
+		val[i] = ft_strdup(src[i]);
+	return (val);
+}
+
 int	main(int argc, char **argv)
 {
 	char	**val;
 	int		flag;
-	int		i;
 
 	if (argc <= 1)
 		return (0);
 	if (argc == 2)
 		val = ft_split(argv[1], ' ');
 	else
-	{
-		val = ft_calloc(argc, sizeof(char **));
-		while (--argc >= 1)
-			val[argc - 1] = ft_strdup(argv[argc]);
-	}
+		val = strs_dup(&argv[1], argc - 1);
 	flag = is_valid(val);
 	if (flag)
 		push_swap(val);
 	else
 		ft_printf("Error\n");
-	i = 0;
-	while (val[i] != NULL)
-		free(val[i++]);
-	free(val[i]);
-	free(val);
+	strs_free(val);
+	exit(0);
 	return (!flag);
 }
