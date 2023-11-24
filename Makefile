@@ -21,7 +21,11 @@ SRCS	= main.c \
 		  ./ps_lib/ps_node_free.c \
 		  ./ps_lib/ps_node_last.c \
 		  ./ps_lib/ps_node_serializer.c \
-		  ./ps_lib/ps_stack_utils.c
+		  ./ps_lib/ps_stack_op_push.c \
+		  ./ps_lib/ps_stack_op_rev_rotate.c \
+		  ./ps_lib/ps_stack_op_rotate.c \
+		  ./ps_lib/ps_stack_op_swap.c \
+		  ./ps_lib/ps_stack_op.c
 OBJS	= $(SRCS:.c=.o)
 INCLUDE	= -I./ps_lib
 LIBFT	= libft.a
