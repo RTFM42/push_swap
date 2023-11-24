@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ps_stack_op_push.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/24 19:18:00 by yushsato          #+#    #+#             */
+/*   Updated: 2023/11/24 19:18:19 by yushsato         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-t_node *ps_stack_op_push(t_node *src, t_node *dest)
+t_node	*ps_stack_op_push(t_node *src, t_node *dest)
 {
-	t_node *isolate;
+	t_node	*isolate;
 
 	if (src == NULL)
 		return (NULL);
