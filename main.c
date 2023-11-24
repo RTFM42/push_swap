@@ -6,16 +6,16 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:58:30 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/23 16:39:53 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/24 16:04:41 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ps_lib/push_swap.h"
 
-// __attribute__((destructor))	static void	destructor(void)
-// {
-// 	system("leaks -q push_swap");
-// }
+__attribute__((destructor))	static void	destructor(void)
+{
+	system("leaks -q push_swap");
+}
 
 static int	is_valid(char **val)
 {
@@ -86,6 +86,5 @@ int	main(int argc, char **argv)
 	else
 		ft_printf("Error\n");
 	strs_free(val);
-	exit(0);
 	return (!flag);
 }

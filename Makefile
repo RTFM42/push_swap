@@ -6,7 +6,7 @@
 #    By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 10:00:38 by yushsato          #+#    #+#              #
-#    Updated: 2023/11/23 15:00:13 by yushsato         ###   ########.fr        #
+#    Updated: 2023/11/24 15:52:11 by yushsato         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,16 @@ NAME	= push_swap
 CC		= cc
 CFLAGS	= # -Wall -Wextra -Werror
 SRCS	= main.c \
-		  ps_atoi.c \
-		  ps_main.c \
-		  ps_node_utils.c \
-		  ps_stack_utils.c
+		  push_swap.c \
+		  ./ps_lib/ps_atoi.c \
+		  ./ps_lib/ps_debug.c \
+		  ./ps_lib/ps_node_first.c \
+		  ./ps_lib/ps_node_free.c \
+		  ./ps_lib/ps_node_last.c \
+		  ./ps_lib/ps_node_serializer.c \
+		  ./ps_lib/ps_stack_utils.c
 OBJS	= $(SRCS:.c=.o)
-INCLUDE	= -I. -I./lib/libft
+INCLUDE	= -I./ps_lib
 LIBFT	= libft.a
 PRINTF	= ftprintf.a
 

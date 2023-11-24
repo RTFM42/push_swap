@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_main.c                                          :+:      :+:    :+:   */
+/*   ps_node_first.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yushsato <yushsato@student.42tokyo.>       +#+  +:+       +#+        */
+/*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 20:02:55 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/23 16:57:09 by yushsato         ###   ########.fr       */
+/*   Created: 2023/11/24 18:28:56 by yushsato          #+#    #+#             */
+/*   Updated: 2023/11/24 18:28:57 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(char **val)
+t_node	*ps_node_first(t_node *node)
 {
-	t_stack	stack;
-
-	stack.a = ps_node_serializer(val);
+	if (node == NULL)
+		return (NULL);
+	while (node->prev != NULL)
+		node = node->prev;
+	return (node);
 }

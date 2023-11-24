@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:14:26 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/23 17:28:30 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/24 17:40:40 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	ps_stack_op(char *op, t_stack *stack)
 	if (!ft_memcmp("pb", op, 3) && stack->b != NULL)
 	{
 		tmp = stack->b;
-		stack->b = ps_stack_push(stack->b, stack->b);
+		stack->b = ps_stack_push(stack->b, stack->a);
 		stack->a = tmp;
 	}
 	if (!ft_memcmp("ra", op, 3))

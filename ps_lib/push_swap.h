@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:03:13 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/23 17:29:22 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/24 15:56:47 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdlib.h>
 # include <limits.h>
-# include "lib/libft/libft.h"
-# include "lib/ft_printf/ft_printf.h"
+# include "../lib/libft/libft.h"
+# include "../lib/ft_printf/ft_printf.h"
 
 typedef struct s_node
 {
@@ -39,5 +39,7 @@ void	ps_node_free(t_node *node);
 t_node	*ps_node_first(t_node *node);
 t_node	*ps_node_last(t_node *node);
 void	ps_stack_op(char *op, t_stack *stack);
+
+void	ps_print_stack(t_stack stack);
 
 #endif
