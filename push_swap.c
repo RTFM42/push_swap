@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_main.c                                          :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yushsato <yushsato@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:02:55 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/24 18:00:47 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/27 14:16:26 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,5 @@ void	push_swap(char **val)
 	ps_print_stack(*stack);
 	ps_stack_op("ra", stack);
 	ps_print_stack(*stack);
-	ps_node_free(stack->a);
-	ps_node_free(stack->b);
-	free(stack);
+	ps_stack_free(stack);
 }

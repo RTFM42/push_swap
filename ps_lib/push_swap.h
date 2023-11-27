@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:03:13 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/24 19:01:32 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/27 14:12:40 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ t_node	*ps_stack_op_rotate(t_node *node);
 t_node	*ps_stack_op_swap(t_node *node);
 t_stack	ps_stack_op_push_wrapper(char *op, t_stack stack);
 void	ps_stack_op(char *op, t_stack *stack);
+void	ps_stack_free(t_stack *stack);
 
 void	ps_print_stack(t_stack stack);
 

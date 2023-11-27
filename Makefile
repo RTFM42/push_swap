@@ -6,7 +6,7 @@
 #    By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 10:00:38 by yushsato          #+#    #+#              #
-#    Updated: 2023/11/24 15:52:11 by yushsato         ###   ########.fr        #
+#    Updated: 2023/11/27 14:14:01 by yushsato         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS	= main.c \
 		  ./ps_lib/ps_node_free.c \
 		  ./ps_lib/ps_node_last.c \
 		  ./ps_lib/ps_node_serializer.c \
+		  ./ps_lib/ps_stack_free.c \
 		  ./ps_lib/ps_stack_op_push.c \
 		  ./ps_lib/ps_stack_op_rev_rotate.c \
 		  ./ps_lib/ps_stack_op_rotate.c \
