@@ -14,15 +14,13 @@
 
 void	ps_stack_op(char *op, t_stack *stack)
 {
-	t_node	*tmp;
-
 	if (!ft_memcmp("sa", op, 3))
 		stack->a = ps_stack_op_swap(stack->a);
 	else if (!ft_memcmp("sb", op, 3))
 		stack->b = ps_stack_op_swap(stack->b);
-	else if (!ft_memcmp("pa", op, 3) && stack->a != NULL)
+	else if (!ft_memcmp("pa", op, 3) && stack->b != NULL)
 		*stack = ps_stack_op_push_wrapper("pa", *stack);
-	else if (!ft_memcmp("pb", op, 3) && stack->b != NULL)
+	else if (!ft_memcmp("pb", op, 3) && stack->a != NULL)
 		*stack = ps_stack_op_push_wrapper("pb", *stack);
 	else if (!ft_memcmp("ra", op, 3))
 		stack->a = ps_stack_op_rotate(stack->a);
@@ -34,5 +32,5 @@ void	ps_stack_op(char *op, t_stack *stack)
 		stack->b = ps_stack_op_rev_rotate(stack->b);
 	else
 		return ;
-	ft_printf("%s", op);
+	ft_printf("%s ", op);
 }

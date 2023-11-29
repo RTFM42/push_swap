@@ -32,13 +32,13 @@ t_stack	ps_stack_op_push_wrapper(char *op, t_stack stack)
 {
 	t_node	*tmp;
 
-	if (ft_strncmp(op, "pa", 3) == 0)
+	if (ft_strncmp(op, "pb", 3) == 0)
 	{
 		tmp = stack.a;
 		stack.a = ps_stack_op_push(stack.a, stack.b);
 		stack.b = tmp;
 	}
-	if (ft_strncmp(op, "pb", 3) == 0)
+	if (ft_strncmp(op, "pa", 3) == 0)
 	{
 		tmp = stack.b;
 		stack.b = ps_stack_op_push(stack.b, stack.a);

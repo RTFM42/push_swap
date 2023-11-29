@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ps_node_len.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yushsato <yushsato@student.42tokyo.>       +#+  +:+       +#+        */
+/*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 20:02:55 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/27 14:38:10 by yushsato         ###   ########.fr       */
+/*   Created: 2023/11/27 19:40:52 by yushsato          #+#    #+#             */
+/*   Updated: 2023/11/27 19:42:28 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ps_lib/push_swap.h"
+#include "push_swap.h"
 
-void	push_swap(char **val)
+int	ps_node_len(t_node *node)
 {
-	t_stack	*stack;
+	int	len;
 
-	stack = ft_calloc(1, sizeof(t_stack));
-	stack->a = ps_node_serializer(val);
-	ps_argo_a_to_b(stack);
-	ps_stack_free(stack);
+	len = 0;
+	if (node != NULL)
+	{
+		node = node->next;
+		len++;
+	}
+	return (len);
 }

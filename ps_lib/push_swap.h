@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:03:13 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/27 14:12:40 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/11/27 19:42:51 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,13 @@ typedef struct s_stack
 }	t_stack;
 
 void	push_swap(char **val);
-char	**ps_split(const char *s, char c);
+void	ps_argo_a_to_b(t_stack *stack);
 long	ps_atoi(const char *str);
 t_node	*ps_node_serializer(char **val);
 void	ps_node_free(t_node *node);
 t_node	*ps_node_first(t_node *node);
 t_node	*ps_node_last(t_node *node);
+int		ps_node_len(t_node *node);
 t_node	*ps_stack_op_push(t_node *src, t_node *dest);
 t_node	*ps_stack_op_rev_rotate(t_node *node);
 t_node	*ps_stack_op_rotate(t_node *node);

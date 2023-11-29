@@ -6,20 +6,22 @@
 #    By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 10:00:38 by yushsato          #+#    #+#              #
-#    Updated: 2023/11/27 14:14:01 by yushsato         ###   ########.fr        #
+#    Updated: 2023/11/27 19:44:33 by yushsato         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 CC		= cc
-CFLAGS	= # -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 SRCS	= main.c \
 		  push_swap.c \
+		  ./ps_lib/ps_argo_a_to_b.c \
 		  ./ps_lib/ps_atoi.c \
 		  ./ps_lib/ps_debug.c \
 		  ./ps_lib/ps_node_first.c \
 		  ./ps_lib/ps_node_free.c \
 		  ./ps_lib/ps_node_last.c \
+		  ./ps_lib/ps_node_len.c \
 		  ./ps_lib/ps_node_serializer.c \
 		  ./ps_lib/ps_stack_free.c \
 		  ./ps_lib/ps_stack_op_push.c \

@@ -12,10 +12,10 @@
 
 #include "ps_lib/push_swap.h"
 
-__attribute__((destructor))	static void	destructor(void)
-{
-	system("leaks -q push_swap");
-}
+// __attribute__((destructor))	static void	destructor(void)
+// {
+// 	system("leaks -q push_swap");
+// }
 
 static int	is_valid(char **val)
 {
