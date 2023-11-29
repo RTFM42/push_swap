@@ -32,5 +32,5 @@ void	ps_stack_op(char *op, t_stack *stack)
 		stack->b = ps_stack_op_rev_rotate(stack->b);
 	else
 		return ;
-	ft_printf("%s ", op);
+	ft_printf("%s", op);
 }

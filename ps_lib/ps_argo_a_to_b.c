@@ -14,7 +14,7 @@
 
 static void	to_top(t_stack *stack, int max, int count)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (stack->a != NULL && i < 8)
@@ -29,9 +29,9 @@ static void	to_top(t_stack *stack, int max, int count)
 	}
 }
 
-static void to_bottom(t_stack *stack, int max, int count)
+static void	to_bottom(t_stack *stack, int max, int count)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (stack->a != NULL && i < 8)
