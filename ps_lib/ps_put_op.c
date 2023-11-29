@@ -26,7 +26,7 @@ void	ps_put_op(char *op)
 			tmp = ptr;
 			ptr = ft_calloc(1, ft_strlen(ptr) + 1 + ft_strlen(op) + 1);
 			ft_memcpy(ptr, tmp, ft_strlen(tmp));
-			ft_memcpy(ptr + ft_strlen(tmp), " ", 1);
+			ft_memcpy(ptr + ft_strlen(tmp), "\n", 1);
 			ft_memcpy(ptr + ft_strlen(tmp) + 1, op, ft_strlen(op));
 			free(tmp);
 		}
