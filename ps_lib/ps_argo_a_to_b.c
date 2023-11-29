@@ -51,10 +51,11 @@ void	ps_argo_a_to_b(t_stack *stack)
 {
 	int	max;
 
-	max = 8;
+	max = 0;
 	ps_print_stack(*stack);
 	while (stack->a != NULL)
 	{
+		max += 8;
 		to_top(stack, max, 8);
 		max += 8;
 		to_bottom(stack, max, 8);
