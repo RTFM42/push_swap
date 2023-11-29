@@ -20,4 +20,5 @@ void	push_swap(char **val)
 	stack->a = ps_node_serializer(val);
 	ps_argo_a_to_b(stack);
 	ps_stack_free(stack);
+	ps_put_op("EOL");
 }

@@ -35,6 +35,7 @@ void	push_swap(char **val);
 void	ps_argo_a_to_b(t_stack *stack);
 long	ps_atoi(const char *str);
 t_node	*ps_node_serializer(char **val);
+void	ps_put_op(char *op);
 void	ps_node_free(t_node *node);
 t_node	*ps_node_first(t_node *node);
 t_node	*ps_node_last(t_node *node);
