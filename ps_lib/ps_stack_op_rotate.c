@@ -18,12 +18,12 @@ t_node	*ps_stack_op_rotate(t_node *node)
 
 	if (node == NULL || node->next == NULL)
 		return (node);
-	isolate = node;
-	node = node->next;
-	node->prev = NULL;
 	node = ps_node_last(node);
-	node->next = isolate;
-	isolate->next = NULL;
-	isolate->prev = node;
-	return (ps_node_first(node));
+	isolate = node;
+	node->prev->next = NULL;
+	node = ps_node_first(node->prev);
+	node->prev = isolate;
+	isolate->prev = NULL;
+	isolate->next = node;
+	return (isolate);
 }

@@ -25,7 +25,7 @@ static void	to_top(t_stack *stack, int max, int count)
 			i++;
 		}
 		else
-			ps_stack_op("rra", stack);
+			ps_stack_op("ra", stack);
 	}
 }
 
@@ -39,11 +39,11 @@ static void to_bottom(t_stack *stack, int max, int count)
 		if (max - 8 <= stack->a->num && stack->a->num < max && i < count)
 		{
 			ps_stack_op("pb", stack);
-			ps_stack_op("rrb", stack);
+			ps_stack_op("rb", stack);
 			i++;
 		}
 		else
-			ps_stack_op("rra", stack);
+			ps_stack_op("ra", stack);
 	}
 }
 
@@ -52,7 +52,6 @@ void	ps_argo_a_to_b(t_stack *stack)
 	int	max;
 
 	max = 0;
-	ps_print_stack(*stack);
 	while (stack->a != NULL)
 	{
 		max += 8;
