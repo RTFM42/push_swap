@@ -12,7 +12,7 @@
 
 NAME	= push_swap
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 SRCS	= main.c \
 		  push_swap.c \
 		  ./ps_lib/ps_argo_a_to_b.c \

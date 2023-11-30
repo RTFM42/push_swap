@@ -17,7 +17,7 @@ int	ps_node_len(t_node *node)
 	int	len;
 
 	len = 0;
-	if (node != NULL)
+	while (node != NULL)
 	{
 		node = node->next;
 		len++;

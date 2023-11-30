@@ -18,10 +18,10 @@ void	ps_argo_a_to_b(t_stack *stack)
 	int	i;
 
 	max = 0;
-	while (stack->a != NULL)
+	while (stack->a != NULL && ps_node_len(stack->a) > 3)
 	{
 		i = 0;
-		while (stack->a != NULL && i < 16)
+		while (stack->a != NULL && ps_node_len(stack->a) > 3 && i < 16)
 		{
 			if (max <= stack->a->num && stack->a->num < max + 8)
 			{
