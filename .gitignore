@@ -63,4 +63,4 @@ test.c
 *.tgz
 
 /push_swap
-/pain.sh.ignore
+/pain.sh
