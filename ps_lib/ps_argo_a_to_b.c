@@ -12,55 +12,6 @@
 
 #include "push_swap.h"
 
-// static void	to_top(t_stack *stack, int max, int count)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (stack->a != NULL && i < 8)
-// 	{
-// 		if (max - 8 <= stack->a->num && stack->a->num < max && i < count)
-// 		{
-// 			ps_stack_op("pb", stack);
-// 			i++;
-// 		}
-// 		else
-// 			ps_stack_op("ra", stack);
-// 	}
-// }
-
-// static void	to_bottom(t_stack *stack, int max, int count)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (stack->a != NULL && i < 8)
-// 	{
-// 		if (max - 8 <= stack->a->num && stack->a->num < max && i < count)
-// 		{
-// 			ps_stack_op("pb", stack);
-// 			ps_stack_op("rb", stack);
-// 			i++;
-// 		}
-// 		else
-// 			ps_stack_op("ra", stack);
-// 	}
-// }
-
-// void	ps_argo_a_to_b(t_stack *stack)
-// {
-// 	int	max;
-
-// 	max = 0;
-// 	while (stack->a != NULL)
-// 	{
-// 		max += 8;
-// 		to_top(stack, max, 8);
-// 		max += 8;
-// 		to_bottom(stack, max, 8);
-// 	}
-// }
-
 void	ps_argo_a_to_b(t_stack *stack)
 {
 	int	max;
