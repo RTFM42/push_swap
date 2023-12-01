@@ -19,6 +19,7 @@ void	push_swap(char **val)
 	stack = ft_calloc(1, sizeof(t_stack));
 	stack->a = ps_node_serializer(val);
 	ps_argo_a_to_b(stack);
+	ps_argo_adjust_a_3(stack);
 	ps_stack_free(stack);
 	ps_put_op("EOL");
 }

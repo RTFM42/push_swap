@@ -33,6 +33,7 @@ typedef struct s_stack
 
 void	push_swap(char **val);
 void	ps_argo_a_to_b(t_stack *stack);
+void	ps_argo_adjust_a_3(t_stack *stack);
 long	ps_atoi(const char *str);
 t_node	*ps_node_serializer(char **val);
 void	ps_put_op(char *op);

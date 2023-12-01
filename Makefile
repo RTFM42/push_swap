@@ -16,6 +16,7 @@ CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 SRCS	= main.c \
 		  push_swap.c \
 		  ./ps_lib/ps_argo_a_to_b.c \
+		  ./ps_lib/ps_argo_adjust_a_3.c \
 		  ./ps_lib/ps_atoi.c \
 		  ./ps_lib/ps_debug.c \
 		  ./ps_lib/ps_node_first.c \

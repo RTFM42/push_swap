@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ps_stack_op(char *op, t_stack *stack)
+static void	handler(char *op, t_stack *stack)
 {
 	if (!ft_memcmp("sa", op, 3))
 		stack->a = ps_stack_op_swap(stack->a);
@@ -33,4 +33,21 @@ void	ps_stack_op(char *op, t_stack *stack)
 	else
 		return ;
 	ps_put_op(op);
+}
+
+void	ps_stack_op(char *op, t_stack *stack)
+{
+	char	**ops;
+	char	**tmp;
+
+	ops = ft_split(op, ' ');
+	tmp = ops;
+	while (*ops != NULL)
+	{
+		handler(*ops, stack);
+		free(*ops);
+		ops++;
+	}
+	free(*ops);
+	free(tmp);
 }

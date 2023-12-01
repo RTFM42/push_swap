@@ -30,8 +30,7 @@ void	ps_argo_a_to_b(t_stack *stack)
 			}
 			else if (max + 8 <= stack->a->num && stack->a->num < max + 16)
 			{
-				ps_stack_op("pb", stack);
-				ps_stack_op("rb", stack);
+				ps_stack_op("pb rb", stack);
 				i++;
 			}
 			else
