@@ -24,12 +24,14 @@ void	ps_argo_adjust_a_5(t_stack *stack)
 		if (loc == len)
 			ps_stack_op("pb", stack);
 		else if (len - loc + 1 < loc)
-			ps_stack_op("rb", stack);
+			ps_stack_op("ra", stack);
 		else if (len - loc + 1 >= loc)
-			ps_stack_op("rrb", stack);
+			ps_stack_op("rra", stack);
 	}
-	ps_argo_adjust_a_5(stack);
-	ps_stack_op("pa pa", stack);
+	ps_argo_adjust_a_3(stack);
+	ps_stack_op("pa", stack);
+	if (stack->b != NULL)
+		ps_stack_op("pa", stack);
 	if (stack->a->next != NULL && stack->a->num > stack->a->next->num)
-		ps_stack_op("sa");
+		ps_stack_op("sa", stack);
 }

@@ -26,6 +26,7 @@ SRCS	= main.c \
 		  ./ps_lib/ps_node_last.c \
 		  ./ps_lib/ps_node_len.c \
 		  ./ps_lib/ps_node_max.c \
+		  ./ps_lib/ps_node_min.c \
 		  ./ps_lib/ps_node_serializer.c \
 		  ./ps_lib/ps_put_op.c \
 		  ./ps_lib/ps_stack_free.c \
