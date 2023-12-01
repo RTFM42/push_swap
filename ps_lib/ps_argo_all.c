@@ -16,27 +16,27 @@ static void	a_to_b(t_stack *stack)
 {
 	int	max;
 	int	i;
+	int	s;
 
 	max = 0;
+	s = ps_node_len(stack->a) / 26;
 	while (stack->a != NULL && ps_node_len(stack->a) > 0)
 	{
 		i = 0;
-		while (stack->a != NULL && ps_node_len(stack->a) > 0 && i < 16)
+		while (stack->a != NULL && ps_node_len(stack->a) > 0 && i < s * 2)
 		{
-			if (max <= stack->a->num && stack->a->num < max + 8)
-			{
+			if (max <= stack->a->num && stack->a->num < max + s)
+				i++;
+			else if (max + s <= stack->a->num && stack->a->num < max + s * 2)
+				i++;
+			if (max <= stack->a->num && stack->a->num < max + s)
 				ps_stack_op("pb", stack);
-				i++;
-			}
-			else if (max + 8 <= stack->a->num && stack->a->num < max + 16)
-			{
+			else if (max + s <= stack->a->num && stack->a->num < max + s * 2)
 				ps_stack_op("pb rb", stack);
-				i++;
-			}
 			else
 				ps_stack_op("ra", stack);
 		}
-		max += 16;
+		max += s * 2;
 	}
 }
 
