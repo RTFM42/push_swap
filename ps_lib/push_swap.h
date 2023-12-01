@@ -53,6 +53,4 @@ t_stack	ps_stack_op_push_wrapper(char *op, t_stack stack);
 void	ps_stack_op(char *op, t_stack *stack);
 void	ps_stack_free(t_stack *stack);
 
-void	ps_print_stack(t_stack stack);
-
 #endif

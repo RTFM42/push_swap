@@ -17,7 +17,7 @@ int	ps_node_issorted(t_node *node)
 	while (node != NULL)
 	{
 		if (node->next == NULL)
-			break;
+			break ;
 		if (node->next->num > node->num)
 			node = node->next;
 		else

@@ -19,7 +19,6 @@ SRCS	= main.c \
 		  ./ps_lib/ps_argo_adjust_a_3.c \
 		  ./ps_lib/ps_argo_adjust_a_5.c \
 		  ./ps_lib/ps_atoi.c \
-		  ./ps_lib/ps_debug.c \
 		  ./ps_lib/ps_node_first.c \
 		  ./ps_lib/ps_node_free.c \
 		  ./ps_lib/ps_node_issorted.c \
@@ -73,7 +72,7 @@ __debug_configure__:
 debug: __debug_configure__ all
 
 norminette: $(SRCS)
-	norminette $^ ./lib/libft ./lib/ft_printf
+	norminette ./ps_lib/push_swap.h $^ ./lib/libft ./lib/ft_printf
 
 norm: norminette
 

@@ -15,6 +15,7 @@
 t_node	*ps_node_min(t_node *node)
 {
 	t_node	*min;
+
 	min = node;
 	while (node != NULL)
 	{
