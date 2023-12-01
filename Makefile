@@ -6,7 +6,7 @@
 #    By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 10:00:38 by yushsato          #+#    #+#              #
-#    Updated: 2023/11/27 19:44:33 by yushsato         ###   ########.fr        #
+#    Updated: 2023/12/01 18:58:08 by yushsato         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,14 @@ SRCS	= main.c \
 		  push_swap.c \
 		  ./ps_lib/ps_argo_a_to_b.c \
 		  ./ps_lib/ps_argo_adjust_a_3.c \
+		  ./ps_lib/ps_argo_b_to_a.c \
 		  ./ps_lib/ps_atoi.c \
 		  ./ps_lib/ps_debug.c \
 		  ./ps_lib/ps_node_first.c \
 		  ./ps_lib/ps_node_free.c \
 		  ./ps_lib/ps_node_last.c \
 		  ./ps_lib/ps_node_len.c \
+		  ./ps_lib/ps_node_max.c \
 		  ./ps_lib/ps_node_serializer.c \
 		  ./ps_lib/ps_put_op.c \
 		  ./ps_lib/ps_stack_free.c \
