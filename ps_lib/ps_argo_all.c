@@ -19,11 +19,11 @@ static void	a_to_b(t_stack *stack)
 	int	s;
 
 	max = 0;
-	s = ps_node_len(stack->a) / 26;
-	while (stack->a != NULL && ps_node_len(stack->a) > 0)
+	s = ps_node_len(stack->a) / 25;
+	while (stack->a != NULL)
 	{
 		i = 0;
-		while (stack->a != NULL && ps_node_len(stack->a) > 0 && i < s * 2)
+		while (stack->a != NULL && i < s * 2)
 		{
 			if (max <= stack->a->num && stack->a->num < max + s)
 				i++;
