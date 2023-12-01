@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_argo_b_to_a.c                                   :+:      :+:    :+:   */
+/*   ps_argo_adjust_a_5.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 18:27:45 by yushsato          #+#    #+#             */
-/*   Updated: 2023/12/01 19:21:44 by yushsato         ###   ########.fr       */
+/*   Created: 2023/12/01 19:56:52 by yushsato          #+#    #+#             */
+/*   Updated: 2023/12/01 20:11:04 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ps_argo_b_to_a(t_stack *stack)
+void	ps_argo_adjust_a_5(t_stack *stack)
 {
-	int		len;
 	int		loc;
-	t_node	*max;
-	t_node	*tmp;
+	int		len;
 
-	while (stack->b != NULL)
+	while (ps_node_len(stack->a) > 3)
 	{
-		len = ps_node_len(stack->b);
-		max = ps_node_max(stack->b);
-		loc = ps_node_len(max);
-		tmp = max->prev;
-		if (!!tmp && tmp->num + 1 == max->num && loc + 1 == len)
-			ps_stack_op("pa pa sa", stack);
-		else if (loc == len)
-			ps_stack_op("pa", stack);
+		len = ps_node_len(stack->a);
+		loc = ps_node_len(ps_node_min(stack->a));
+		if (loc == len)
+			ps_stack_op("pb", stack);
 		else if (len - loc + 1 < loc)
 			ps_stack_op("rb", stack);
 		else if (len - loc + 1 >= loc)
 			ps_stack_op("rrb", stack);
 	}
+	ps_argo_adjust_a_5(stack);
+	ps_stack_op("pa pa", stack);
+	if (stack->a->next != NULL && stack->a->num > stack->a->next->num)
+		ps_stack_op("sa");
 }

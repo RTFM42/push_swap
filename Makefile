@@ -15,13 +15,14 @@ CC		= cc
 CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 SRCS	= main.c \
 		  push_swap.c \
-		  ./ps_lib/ps_argo_a_to_b.c \
+		  ./ps_lib/ps_argo_all.c \
 		  ./ps_lib/ps_argo_adjust_a_3.c \
-		  ./ps_lib/ps_argo_b_to_a.c \
+		  ./ps_lib/ps_argo_adjust_a_5.c \
 		  ./ps_lib/ps_atoi.c \
 		  ./ps_lib/ps_debug.c \
 		  ./ps_lib/ps_node_first.c \
 		  ./ps_lib/ps_node_free.c \
+		  ./ps_lib/ps_node_issorted.c \
 		  ./ps_lib/ps_node_last.c \
 		  ./ps_lib/ps_node_len.c \
 		  ./ps_lib/ps_node_max.c \

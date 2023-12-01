@@ -31,10 +31,12 @@ void	ps_put_op(char *op)
 			free(tmp);
 		}
 	}
-	else
+	else if (ptr != NULL)
 	{
 		ft_printf("%s\n", ptr);
 		free(ptr);
 		ptr = NULL;
 	}
+	else
+		ft_printf("\n");
 }

@@ -18,9 +18,16 @@ void	push_swap(char **val)
 
 	stack = ft_calloc(1, sizeof(t_stack));
 	stack->a = ps_node_serializer(val);
-	ps_argo_a_to_b(stack);
-	ps_argo_adjust_a_3(stack);
-	ps_argo_b_to_a(stack);
+	if (ps_node_issorted(stack->a))
+		;
+	else if (ps_node_len(stack->a) <= 2 && stack->a->num > stack->a->next->num)
+		ps_stack_op("sa", stack);
+	else if (ps_node_len(stack->a) == 3)
+		ps_argo_adjust_a_3(stack);
+	else if (ps_node_len(stack->a) <= 5)
+		ps_argo_adjust_a_5(stack);
+	else
+		ps_argo_all(stack);
 	ps_stack_free(stack);
 	ps_put_op("EOL");
 }
