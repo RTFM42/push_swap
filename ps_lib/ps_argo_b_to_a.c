@@ -26,8 +26,8 @@ void	ps_argo_b_to_a(t_stack *stack)
 		if (loc == len)
 			ps_stack_op("pa", stack);
 		else if (len - loc + 1 < loc)
-			ps_stack_op("rra", stack);
+			ps_stack_op("rb", stack);
 		else if (len - loc + 1 >= loc)
-			ps_stack_op("ra", stack);
+			ps_stack_op("rrb", stack);
 	}
 }
