@@ -30,7 +30,7 @@ static int	is_valid(char **val)
 			continue ;
 		if ((long)INT_MAX < ps_atoi(val[i]) || (long)INT_MIN > ps_atoi(val[i]))
 			return (0);
-		if (val[i][0] == '-')
+		if (val[i][0] == '-' && val[i][1] != '\0')
 			n++;
 		if ('1' <= val[i][n] && val[i][n] <= '9')
 			while ('0' <= val[i][n] && val[i][n] <= '9')
