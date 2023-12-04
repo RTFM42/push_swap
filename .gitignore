@@ -64,5 +64,5 @@ test.c
 
 /push_swap
 /pain.sh
-/checker_*
+/checker*
 .vscode
