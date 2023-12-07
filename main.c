@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:58:30 by yushsato          #+#    #+#             */
-/*   Updated: 2023/12/07 17:03:18 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:06:07 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ static char	**strs_dup(char **src, unsigned int len)
 	char			**val;
 	unsigned int	i;
 
-	val = ft_calloc(len + 1, sizeof(char **));
 	i = -1;
+	val = ft_calloc(len + 1, sizeof(char **));
 	while (++i < len)
 		val[i] = ft_strdup(src[i]);
 	return (val);
