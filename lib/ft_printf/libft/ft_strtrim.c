@@ -6,7 +6,7 @@
 /*   By: yushsato <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 19:16:37 by yushsato          #+#    #+#             */
-/*   Updated: 2023/06/10 14:24:06 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:24:05 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 		len = s2 - s1 + 2;
 	else
 		len = 1;
-	ret = (char *)malloc(len);
+	ret = (char *)ft_calloc(len, 1);
 	if (ret == 0x0)
 		return (0);
 	ft_bzero(ret, len);
