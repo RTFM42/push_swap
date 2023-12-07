@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:58:30 by yushsato          #+#    #+#             */
-/*   Updated: 2023/11/24 16:04:41 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:03:18 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int	main(int argc, char **argv)
 		push_swap(val);
 	else
 		ft_printf("Error\n");
-	strs_free(val);
+	if (val != NULL)
+		strs_free(val);
 	return (!flag);
 }
