@@ -6,7 +6,7 @@
 /*   By: yushsato <yushsato@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 17:08:33 by yushsato          #+#    #+#             */
-/*   Updated: 2023/06/11 15:15:51 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:28:44 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	**split_allocate(const char *s, char c)
 			j++;
 		s += i;
 	}
-	ret = malloc(sizeof(char *) * j);
+	ret = ft_calloc(sizeof(char *), j);
 	if (!ret)
 		return (NULL);
 	i = 0;

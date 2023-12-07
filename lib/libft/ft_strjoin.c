@@ -6,7 +6,7 @@
 /*   By: yushsato <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:42:51 by yushsato          #+#    #+#             */
-/*   Updated: 2023/06/10 14:23:10 by yushsato         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:27:12 by yushsato         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	ret = (char *)malloc(len1 + len2 + sizeof(char));
+	ret = (char *)ft_calloc(len1 + len2 + 1, sizeof(char));
 	if (!ret)
 		return (0);
 	ft_bzero(ret, len1 + len2 + 1);
