@@ -11,22 +11,25 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "unistd.h"
 #include "limits.h"
 
-static int	exitforce(int i)
+static void	exit_with_error(int i)
 {
+	write(1, "Error\n", 6);
 	exit(i);
-	return (1);
 }
 
 t_node	*ps_node_serializer(char **val)
 {
-	t_node			*ret;
-	t_node			*current;
-	static t_node	*prev;
-	static int		i = -1;
-	int				j;
+	t_node	*ret;
+	t_node	*current;
+	t_node	*prev;
+	int		i;
+	int		j;
 
+	prev = NULL;
+	i = -1;
 	while (val[++i] != NULL)
 	{
 		current = ft_calloc(1, sizeof(t_node));
@@ -38,12 +41,9 @@ t_node	*ps_node_serializer(char **val)
 		prev = current;
 		j = -1;
 		while (val[++j] != NULL)
-			if (ft_atoi(val[i]) > ft_atoi(val[j]))
-			{
+			if (ft_atoi(val[i]) > ft_atoi(val[j]) && current->num++)
 				if (current->num == INT_MAX)
-					ft_printf("Error\n", exitforce(1));
-				current->num += 1;
-			}
+					exit_with_error(1);
 	}
 	return (ret);
 }
