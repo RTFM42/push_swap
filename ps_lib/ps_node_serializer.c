@@ -42,7 +42,7 @@ t_node	*ps_node_serializer(char **val)
 		j = -1;
 		while (val[++j] != NULL)
 			if (ft_atoi(val[i]) > ft_atoi(val[j]) && current->num++)
-				if (current->num == INT_MAX)
+				if (current->num - 1 == INT_MAX)
 					exit_with_error(1);
 	}
 	return (ret);
